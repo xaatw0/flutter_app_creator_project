@@ -1,0 +1,9 @@
+name: flutter_app_creator_project
+publish_to: 'none'
+environment:
+  sdk: ^3.6.0
+
+workspace:
+  - packages/flutter_app_creator
+  - packages/target
+  
