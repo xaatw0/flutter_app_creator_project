@@ -41,7 +41,6 @@ dependencies:
   google_generative_ai: ^0.4.6
   path: ^1.9.0
   process_run: ^1.2.2+1
-  restartfromos: ^0.0.3
 
 dev_dependencies:
   flutter_test:

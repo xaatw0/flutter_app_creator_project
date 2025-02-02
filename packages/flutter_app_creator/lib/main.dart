@@ -4,7 +4,6 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_creator/domain/modules/generate_code.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
-import 'package:restartfromos/restartatos.dart';
 import 'package:target/main.dart' as target;
 import 'package:path/path.dart' as path;
 
