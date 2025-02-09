@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: TextField(
                       controller: _textController,
                       decoration: InputDecoration(
-                        hintText: 'hintText',
+                        hintText: '修正点を入力 \n  例)テーマカラーを青にして',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(32),
                         ),

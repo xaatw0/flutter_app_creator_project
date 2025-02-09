@@ -3,8 +3,11 @@ import 'dart:async';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 import 'abstract_agent.dart';
+import 'gemini_agent.dart';
 
 class LlmAgent extends AbstractAgent {
+  static final _geminiAgent = GeminiAgent();
+
   LlmAgent(
     this._generativeModel,
     this.command,
@@ -22,11 +25,14 @@ class LlmAgent extends AbstractAgent {
 
   @override
   Future<AgentResponse> process(String message) async {
-    final content = [Content.text(message)];
-    final response = await _generativeModel.generateContent(content);
+    final requestMessage = kRequestFormatForLlm
+        .replaceFirst(kKeyCommand, command)
+        .replaceFirst(kKeyInput, message);
+
+    final response = await _geminiAgent.process(requestMessage);
 
     return AgentResponse(
-      response.text ?? kMessageWhenGotNoMessage,
+      response.message,
       handle: HandleReplies.replace,
     );
   }
